@@ -6,11 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import id.ac.polinema.skor.models.GoalScorer;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,11 +44,12 @@ public class ScoreFragment extends Fragment {
 	}
 
 	public void onAddHomeClick(View view) {
-
+		ScoreFragmentDirections.GoalScorerAction action = ScoreFragmentDirections.goalScorerAction(HOME_REQUEST_KEY);
+		Navigation.findNavController(view).navigate(action);
 	}
 
 	public void onAddAwayClick(View view) {
-
+		ScoreFragmentDirections.GoalScorerAction action = ScoreFragmentDirections.goalScorerAction(AWAY_REQUEST_KEY);
+		Navigation.findNavController(view).navigate(action);
 	}
-
 }
